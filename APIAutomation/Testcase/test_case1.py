@@ -4,7 +4,7 @@ from API_Automation.Common import Request as br
 from API_Automation.Config import  Config
 
 class TestBasic():
-    #@allure.feature('登陆测试方法1')
+    @allure.feature('登陆测试方法1')
     @pytest.mark.parametrize("das", [{'q': 'python'}, {'q': 'c'}])
     def test_douban_01(self,das):
     #conf=Config()

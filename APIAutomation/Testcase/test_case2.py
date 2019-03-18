@@ -9,7 +9,7 @@ test_login_data = [{'user':'QQ:88428977', 'psw':'111111', 'uri':'xxxx'},
 s = requests.session()
 
 @pytest.fixture(scope='module')
-#@allure.feature('登陆测试方法2')
+@allure.feature('登陆测试方法2')
 def login(request):
     '''登陆测试'''
     user = request.param['user']
