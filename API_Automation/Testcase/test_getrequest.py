@@ -13,6 +13,7 @@ class TestBasic():
         url='https://'+host+hotshowmoviedata
         getResponse = br.checkGetSubject(url, das)
     #获取某一部电影信息
+    @pytest.mark.getmovies
     @pytest.mark.parametrize("das", [{'q': '神秘巨星','start':0,'count':2}])
     def test_search_movies(self,das):
         host = Config.get_hostConfig()
