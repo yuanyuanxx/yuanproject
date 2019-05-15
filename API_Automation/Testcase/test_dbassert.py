@@ -5,4 +5,4 @@ import pytest
 def test_getuser(db):
     users=dbselect.select_user(db)
     print(len(users))
-    assert len(users)==10
+    assert len(users)==13
