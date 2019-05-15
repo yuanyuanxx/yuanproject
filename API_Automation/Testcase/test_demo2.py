@@ -30,20 +30,23 @@ class DB(object):
         self.intransaction.append(name)
     def rollback(self):
         self.intransaction.pop()
+
 @pytest.fixture(scope="module")
 def db():
     return DB()
 
 class TestClass(object):
     @pytest.fixture(autouse=True)
-    #当autouse为true时，类中的所有测试方法都将使用此fixture，
+    # 当autouse为true时，类中的所有测试方法都将使用此fixture，
     # 无需在测试函数添加或使用类级别的fixture
     def transact(self, request, db):
         db.begin(request.function.__name__)
         yield
         db.rollback()
+
     def test_method1(self, db):
         assert db.intransaction == ["test_method1"]
+
     def test_method2(self, db):
         assert db.intransaction == ["test_method2"]
 
@@ -63,4 +66,4 @@ def test_create_file(tmpdir):
     assert p.read() == "content"
     a=tmpdir.listdir()
     print(a)
-    assert 0
+    #assert 0

@@ -2,7 +2,7 @@ import pytest
 import allure
 from API_Automation.Common import Request as br
 from API_Automation.Config import  Config
-
+'''
 class TestBasic():
     #@allure.feature('测试1')
     #获取 广州2条和上海1条的热映电影
@@ -20,6 +20,6 @@ class TestBasic():
         moviesearchdata = Config.get_moviesearch()
         url = 'https://' + host + moviesearchdata
         getResponse = br.checkGetSubject(url, das)
-
+'''
 
 
